@@ -18,6 +18,5 @@
     "esModuleInterop": true
   },
   "include": [".", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "vite.config.ts"]
 }
