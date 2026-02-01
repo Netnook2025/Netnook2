@@ -196,7 +196,7 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+export const LanguageProvider = ({ children }: { children?: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
     return (localStorage.getItem('netnook_lang') as Language) || 'en';
   });
