@@ -5,7 +5,12 @@ let ai: GoogleGenAI | null = null;
 
 const getClient = () => {
   if (ai) return ai;
-  ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Ensure API_KEY is treated as a string to satisfy TypeScript strict mode
+  const apiKey = process.env.API_KEY || "";
+  if (!apiKey) {
+    console.warn("Gemini API Key is missing");
+  }
+  ai = new GoogleGenAI({ apiKey });
   return ai;
 };
 
